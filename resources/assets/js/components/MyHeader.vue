@@ -14,13 +14,13 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+               <!-- <a class="navbar-item">
                     Home
-                </a>
+                </a>-->
 
-                <a class="navbar-item">
-                    About
-                </a>
+                <!--create router links similar to anchor tags-->
+                <router-link to="/home" class="navbar-item">Home</router-link>
+                <router-link to="/about" class="navbar-item">About</router-link>
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">

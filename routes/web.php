@@ -15,3 +15,8 @@ Route::get('/', function () {
     //return view('welcome');
     return view('phonebook');
 });
+
+//link the vue routes to Laravel routes
+Route::get('/{name}',function(){
+    return redirect('/');
+})->where('name','[A-Za-z]+');

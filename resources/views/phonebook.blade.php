@@ -16,7 +16,11 @@
     <body>
         <div id="app">
             <Myheader></Myheader>
-            <br>
+
+            <div class="container">
+                <router-view></router-view>
+            </div>
+
             <Myfooter></Myfooter>
         </div>
 
