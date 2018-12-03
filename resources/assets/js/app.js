@@ -18,6 +18,8 @@ window.Vue = require('vue');
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 let Myheader = require('./components/MyHeader.vue');
 let Myfooter = require('./components/MyFooter.vue');
+let Home = require('./components/Home.vue');
+let About = require('.components/About');
 
 const app = new Vue({
     el: '#app',
