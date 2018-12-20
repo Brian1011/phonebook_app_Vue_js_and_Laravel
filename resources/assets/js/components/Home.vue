@@ -32,7 +32,7 @@
                     <i class="has-text-info fa fa-edit" aria-hidden="true"></i>
                 </span>
 
-                <span class="panel-icon column is-1" @click="openShow">
+                <span class="panel-icon column is-1" @click="openShow(key)">
                     <i class="has-text-primary fa fa-eye" aria-hidden="true"></i>
                 </span>
            </a>
@@ -68,7 +68,8 @@
             },
 
             //show phonebook details
-            openShow(){
+            openShow(key){
+                console.log(this.$children[1].list = this.lists[key])
                 this.showActive = 'is-active';
             },
 

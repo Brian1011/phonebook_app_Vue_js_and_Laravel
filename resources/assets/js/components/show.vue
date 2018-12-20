@@ -9,27 +9,17 @@
 
             <section class="modal-card-body">
                 <!-- Content ... -->
-                <div class="field">
-                    <label class="label">Name</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Name" >
-                    </div>
-                </div>
+                <li class="panel-block">
+                    <label class="column is-2"><b>Name</b></label> {{list.name}}
+                </li>
 
-                <div class="field">
-                    <label class="label">Phone</label>
-                    <div class="control">
-                        <input class="input"  type="number" placeholder="Phone Number" >
-                    </div>
-                </div>
+                <li class="panel-block">
+                    <label class="column is-2"><b>Phone</b></label> {{list.phone}}
+                </li>
 
-                <div class="field">
-                    <label class="label">Email</label>
-                    <div class="control">
-                        <input class="input"  type="email" placeholder="Email Address">
-                    </div>
-                </div>
-
+                <li class="panel-block">
+                    <label class="column is-2"><b>Email</b></label> {{list.email}}
+                </li>
             </section>
 
             <footer class="modal-card-foot">
@@ -42,6 +32,11 @@
 <script>
     export default {
         props:['openmodal'],
+        data(){
+            return {
+                list:''
+            }
+        },
         methods:{
             close(){
                 this.$emit('closeRequest')
