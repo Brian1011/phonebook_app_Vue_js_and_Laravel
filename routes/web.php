@@ -17,6 +17,8 @@ Route::get('/', function () {
 });
 
 //link the vue routes to Laravel routes
-Route::get('/{name}',function(){
+Route::get('/phonebook/{name}',function(){
     return redirect('/');
 })->where('name','[A-Za-z]+');
+
+Route::resource('phonebook','PhonebookController');
