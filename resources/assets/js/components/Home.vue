@@ -18,10 +18,10 @@
                </p>
            </div>
 
-           <a class="panel-block is-active" >
+           <a class="panel-block is-active" v-for="item,key in lists">
 
                <span class="column is-9">
-                   Marksheet
+                   {{item.name}}
                </span>
 
                 <span class="panel-icon column is-1">
