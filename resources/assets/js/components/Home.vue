@@ -32,23 +32,26 @@
                     <i class="has-text-info fa fa-edit" aria-hidden="true"></i>
                 </span>
 
-                <span class="panel-icon column is-1">
+                <span class="panel-icon column is-1" @click="openShow">
                     <i class="has-text-primary fa fa-eye" aria-hidden="true"></i>
                 </span>
            </a>
 
        </nav>
        <Add :openmodal="addActive" @closeRequest="close"></Add>
+       <Show :openmodal="showActive" @closeRequest="close"></Show>
    </div>
 </template>
 
 <script>
-    let Add = require('./Add.vue');
+    let Add = require('./Add.vue')
+    let Show = require('./show.vue')//import component
     export default{
-        components:{Add},
+        components:{Add,Show},
         data(){
             return{
                 addActive:'',
+                showActive : '',
                 lists:{},
                 errors:{},
             }
@@ -64,8 +67,13 @@
                 this.addActive = 'is-active';
             },
 
+            //show phonebook details
+            openShow(){
+                this.showActive = 'is-active';
+            },
+
             close(){
-                this.addActive = '';
+                this.addActive = this.showActive = '';
             }
 
         }
