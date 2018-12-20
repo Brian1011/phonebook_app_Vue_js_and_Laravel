@@ -43829,15 +43829,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 var Add = __webpack_require__(45);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: { Add: Add },
     data: function data() {
         return {
-            addActive: ''
+            addActive: '',
+            lists: {},
+            errors: {}
         };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        //console.log('its working')
+        axios.post('/getData').then(function (response) {
+            return _this.lists = response.data;
+        }).catch(function (error) {
+            return _this.errors = error.response.data.errors;
+        });
     },
 
     methods: {

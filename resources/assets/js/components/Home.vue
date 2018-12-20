@@ -18,24 +18,23 @@
                </p>
            </div>
 
-           <a class="panel-block is-active">
+           <a class="panel-block is-active" >
 
                <span class="column is-9">
                    Marksheet
                </span>
 
-               <span class="panel-icon column is-1">
-              <i class="has-text-danger fa fa-trash" aria-hidden="true"></i>
-            </span>
+                <span class="panel-icon column is-1">
+                    <i class="has-text-danger fa fa-trash" aria-hidden="true"></i>
+                </span>
 
-               <span class="panel-icon column is-1">
-              <i class="has-text-info fa fa-edit" aria-hidden="true"></i>
-            </span>
+                <span class="panel-icon column is-1">
+                    <i class="has-text-info fa fa-edit" aria-hidden="true"></i>
+                </span>
 
-               <span class="panel-icon column is-1">
-              <i class="has-text-primary fa fa-eye" aria-hidden="true"></i>
-            </span>
-
+                <span class="panel-icon column is-1">
+                    <i class="has-text-primary fa fa-eye" aria-hidden="true"></i>
+                </span>
            </a>
 
        </nav>
@@ -50,7 +49,15 @@
         data(){
             return{
                 addActive:'',
+                lists:{},
+                errors:{},
             }
+        },
+        mounted(){
+            //console.log('its working')
+            axios.post('/getData')
+                .then((response)=>this.lists = response.data)
+                .catch((error) => this.errors = error.response.data.errors)
         },
         methods:{
             openAdd(){
